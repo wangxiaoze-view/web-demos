@@ -9,7 +9,6 @@ export const baseRouter = createRouter({
   routes: [
     {
       path: "/",
-      name: "Css",
       redirect: "/css",
     },
     ...baseRoutes,

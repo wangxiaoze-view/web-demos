@@ -36,9 +36,15 @@ const findRoutes = () => {
   const getRouteParent = getAllRoutes.value.find(item => {
     return item.children && getRoute(item) || null
   })
+
+  // path == '/'
+  !getRouteParent && tabClick('Css')
+
+  // 其他情况
   getRouteParent && getRouteParent.name && (tabName.value = getRouteParent.name as string)
 }
 
+// 初始化
 findRoutes()
 
 const handlerTabs = () => {
