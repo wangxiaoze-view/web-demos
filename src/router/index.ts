@@ -1,10 +1,19 @@
 import { createRouter, createWebHistory } from "vue-router";
 import cssRoute from "./module/css";
+import jsRoute from "./module/javascript";
+import vueRoute from "./module/vue";
 
-export const baseRoutes = [...cssRoute];
+export const baseRoutes = [...cssRoute, ...jsRoute, ...vueRoute];
 export const baseRouter = createRouter({
-	history: createWebHistory(),
-	routes: baseRoutes,
+  history: createWebHistory(),
+  routes: [
+    {
+      path: "/",
+      name: "Css",
+      redirect: "/css",
+    },
+    ...baseRoutes,
+  ],
 });
 
 export default baseRouter;

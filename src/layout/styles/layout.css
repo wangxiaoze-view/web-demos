@@ -6,9 +6,13 @@
 
 .layout-container {
   padding-top: 60px;
-  height: calc(100% - 60px);
+  display: flex;
+  /* height: calc(100% - 60px); */
+  /* background-color: red; */
+  /* height: calc(100% - 60px); */
 }
 
 .layout-content {
   margin-left: 200px;
+  width: calc(100% - 200px);
 }

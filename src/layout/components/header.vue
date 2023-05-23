@@ -1,42 +1,65 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute, RouteRecordRaw } from 'vue-router'
 import { routerStore } from '../../store/module/router'
-// const route = useRoute()
+
+
+interface TabType {
+  name: string,
+  label: string,
+}
 
 const { get_routes } = routerStore()
 
+const route = useRoute()
 const router = useRouter()
 const tabName = ref('Css')
 
 const getAllRoutes = computed(() => get_routes)
 
-const tabClick = () => {
 
-  const findRoute = getAllRoutes.value.find(route => route.name === tabName.value)
+const tabClick = (name: any) => {
+  tabName.value = name
+  const findRoute = getAllRoutes.value.find(route => route.name === name)
   if (findRoute) {
-    router.push({ name: findRoute.name })
+    let first = findRoute.children ? findRoute.children[0].path : ''
+    router.push({ path: findRoute.path + (first ? '/' + first : '') })
   }
 }
 
 
-const handlerTabs = [
-  { name: 'Css', label: 'Css' },
-  { name: 'Html', label: 'Html' },
-  { name: 'JavaScript', label: 'JavaScript' },
-  { name: 'Vue', label: 'Vue' },
-]
+const findRoutes = () => {
+  const getRoute = (routes: RouteRecordRaw): RouteRecordRaw | null => {
+    let find = (routes.children || []).find(i => i.name == route.name)
+    return find ? routes : null
+  }
+  const getRouteParent = getAllRoutes.value.find(item => {
+    return item.children && getRoute(item) || null
+  })
+  getRouteParent && getRouteParent.name && (tabName.value = getRouteParent.name as string)
+}
+
+findRoutes()
+
+const handlerTabs = () => {
+  let tabs: TabType[] = []
+  getAllRoutes.value.forEach(route => {
+    tabs.push({
+      name: route.name,
+      label: route.name
+    } as TabType)
+  })
+  return tabs
+}
 </script>
 
 
 <template>
   <el-header class="header-container">
-
     <div class="doc-title">Demos</div>
-
     <div class="doc-tabs">
-      <el-tabs v-model="tabName" class="demo-tabs" @tab-click="tabClick">
-        <el-tab-pane v-for="(item, index) in handlerTabs" :key="index" :label="item.label" :name="item.name"></el-tab-pane>
+      <el-tabs v-model="tabName" class="demo-tabs" @tab-change="tabClick">
+        <el-tab-pane v-for="(item, index) in handlerTabs()" :key="index" :label="item.label" :name="item.name"></el-tab-pane>
       </el-tabs>
     </div>
   </el-header>
@@ -49,7 +72,7 @@ const handlerTabs = [
   top: 0;
   left: 0;
   right: 0;
-  z-index: 99;
+  z-index: 10;
   box-shadow: 0 0px 10px #eee;
   background-color: #fff;
 }
@@ -67,5 +90,17 @@ const handlerTabs = [
 
 .doc-tabs {
   flex: 1;
+}
+
+:deep(.el-tabs__header) {
+  margin-bottom: 0;
+}
+
+:deep(.el-tabs__item) {
+  height: 60px;
+}
+
+:deep(.el-tabs__nav-wrap::after) {
+  background-color: #fff;
 }
 </style>

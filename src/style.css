@@ -30,6 +30,10 @@ body {
   min-height: 100vh;
 }
 
+body,html {
+  /* overflow: hidden; */
+  background-color: #f8f8f8;
+}
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -74,4 +78,18 @@ button:focus-visible {
 #app {
   width: 100%;
   height: 100%;
+}
+
+pre {
+  padding: 14px;
+  background: #303133;
+  color: #fff;
+}
+
+
+.view-main--container {
+  margin: 14px;
+  padding: 14px;
+  background-color: #fff;
+
 }
