@@ -93,3 +93,11 @@ pre {
   background-color: #fff;
 
 }
+
+
+blockquote {
+  margin: 0;
+  background: #d1edc4;
+  padding: 14px;
+  border-left: 4px solid #535bf2;
+}

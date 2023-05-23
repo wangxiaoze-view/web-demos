@@ -23,6 +23,10 @@ const { data, error, doFetch } = useFetch(url)
 </script>
 <template>
   <div class="view-main--container">
+
+    <h2>选项卡切换展示不同的请求状态</h2>
+    <blockquote>每次切换选项卡, 或请求loading, error, success三种状态；编写一个kooks解决;</blockquote>
+
     <el-tabs v-model="activeName" class="demo-tabs" @tab-change="handleChange">
       <el-tab-pane v-for="(item, index) in config" :key="index" :label="item.label" :name="item.name">
 
