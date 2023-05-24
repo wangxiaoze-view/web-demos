@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import {defineProps, onMounted, onUnmounted, ref, watchEffect} from 'vue'
 import useWater from './water'
-import {WaterProps} from "./inter";
-
 
 // props
 const props = defineProps({
