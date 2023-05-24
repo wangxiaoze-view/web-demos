@@ -6,30 +6,34 @@ import { routerStore } from '../../store/module/router'
 type routeType = {
   [k: string]: any
 }
-type CustonRouteType = RouteRecordRaw | routeType
+type CustomRouteType = RouteRecordRaw | routeType
 
 
 
 const route: any = useRoute()
 const router = useRouter()
-const routesRef = ref<CustonRouteType[]>([])
+const routesRef = ref()
 
 const { get_routes } = routerStore()
 const getAllRoutes = computed(() => get_routes)
 
 const setRoutes = ({ fullPath }: { fullPath: string }) => {
   let fullPathArr = fullPath.split('/').filter(item => item != '')
-  const getRoute = getAllRoutes.value.find((r: CustonRouteType) => {
+  const getRoute: CustomRouteType = getAllRoutes.value.find((r: CustomRouteType) => {
     const name = r.name.toLocaleLowerCase()
     return fullPathArr.includes(name)
   })
 
 
-  routesRef.value = (getRoute ? getRoute.children : []) as CustonRouteType[]
+  routesRef.value = (getRoute ? getRoute : {}) as CustomRouteType
 }
 
-const toRouterPage = (route: CustonRouteType) => {
+const toRouterPage = (route: CustomRouteType) => {
   router.push({ name: route.name })
+}
+
+const routeKey = (parentPath: string, childPath: string) => {
+  return  parentPath + '/' + childPath
 }
 
 setRoutes(route)
@@ -42,8 +46,13 @@ watch(() => route.fullPath, () => {
 <template>
   <el-aside width="200px" class="aside-view">
     <el-scrollbar class="aside-view--scroller">
-      <el-menu class="menu-vue--contaienr" default-active="2" background-color="#fff">
-        <el-menu-item index="2" v-for="(route) in routesRef" :key="route.path" @click="toRouterPage(route)">
+      <el-menu class="menu-vue--container"  background-color="#fff" :default-active="route.fullPath">
+        <el-menu-item
+          :index="routeKey(routesRef.path, route.path)"
+          v-for="(route) in routesRef.children"
+          :key="routeKey(routesRef.path, route.path)"
+          @click="toRouterPage(route)"
+        >
           <el-icon>
             <Sunset />
           </el-icon>
@@ -71,7 +80,7 @@ watch(() => route.fullPath, () => {
   box-shadow: 2px 10px 20px #ddd;
 }
 
-.menu-vue--contaienr {
+.menu-vue--container {
   border-right: none;
 }
 </style>

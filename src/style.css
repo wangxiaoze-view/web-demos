@@ -33,6 +33,7 @@ body {
 body,html {
   /* overflow: hidden; */
   background-color: #f8f8f8;
+  color: #333;
 }
 h1 {
   font-size: 3.2em;

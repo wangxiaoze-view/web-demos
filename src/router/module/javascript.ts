@@ -4,16 +4,18 @@ const jsRoute: RouteRecordRaw[] = [
   {
     path: "/javascript",
     name: "JavaScript",
-    component: () => import("../../layout/components/containerApp.vue"),
+  // @ts-ignore
+    component: () => import('../../layout/components/containerApp.vue'),
 
     children: [
       {
         path: "code",
         name: "JavaScriptCode",
         meta: {
-          title: "源码",
+          title: "取色器",
         },
-        component: () => import("../../views/css/button/index.vue"),
+        // @ts-ignore
+        component: () => import("../../views/js/color/index.vue"),
       },
     ],
   },
