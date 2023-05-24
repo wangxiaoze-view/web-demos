@@ -1,38 +1,31 @@
-<script setup lang="ts">
+<script setup>
 import { watch, ref, computed } from 'vue';
-import { useRouter, useRoute, RouteRecordRaw } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { routerStore } from '../../store/module/router'
 
-type routeType = {
-  [k: string]: any
-}
-type CustomRouteType = RouteRecordRaw | routeType
-
-
-
-const route: any = useRoute()
+const route = useRoute()
 const router = useRouter()
 const routesRef = ref()
 
 const { get_routes } = routerStore()
 const getAllRoutes = computed(() => get_routes)
 
-const setRoutes = ({ fullPath }: { fullPath: string }) => {
-  let fullPathArr = fullPath.split('/').filter(item => item != '')
-  const getRoute: CustomRouteType = getAllRoutes.value.find((r: CustomRouteType) => {
+const setRoutes = ({ fullPath }) => {
+  let fullPathArr = fullPath.split('/').filter(item => item !== '')
+  const getRoute = getAllRoutes.value.find((r) => {
     const name = r.name.toLocaleLowerCase()
     return fullPathArr.includes(name)
   })
 
 
-  routesRef.value = (getRoute ? getRoute : {}) as CustomRouteType
+  routesRef.value = (getRoute ? getRoute : {})
 }
 
-const toRouterPage = (route: CustomRouteType) => {
+const toRouterPage = (route) => {
   router.push({ name: route.name })
 }
 
-const routeKey = (parentPath: string, childPath: string) => {
+const routeKey = (parentPath, childPath) => {
   return  parentPath + '/' + childPath
 }
 

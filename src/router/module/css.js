@@ -1,6 +1,5 @@
-import { RouteRecordRaw } from "vue-router";
 
-const cssRoute: RouteRecordRaw[] = [
+const cssRoute = [
   {
     path: "/css",
     name: "Css",

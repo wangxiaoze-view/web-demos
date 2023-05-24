@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup >
 import Layout from './layout.vue'
 const config = {
   size: 'default',

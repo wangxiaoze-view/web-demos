@@ -1,6 +1,6 @@
-<script setup lang="ts">
+<script setup >
 import { ref, computed } from 'vue';
-import { useFetch } from './featch';
+import { useFetch } from './fetch.js';
 
 const config = [
   { label: 'ID:1', name: 1 },
@@ -13,7 +13,7 @@ const activeName = ref(1)
 const baseUrl = 'https://jsonplaceholder.typicode.com/todos/'
 const url = computed(() => baseUrl + activeName.value)
 
-const handleChange = (name: number) => {
+const handleChange = (name) => {
   activeName.value = name
 }
 

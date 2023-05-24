@@ -1,6 +1,5 @@
-import { RouteRecordRaw } from "vue-router";
 
-const jsRoute: RouteRecordRaw[] = [
+const jsRoute = [
   {
     path: "/javascript",
     name: "JavaScript",

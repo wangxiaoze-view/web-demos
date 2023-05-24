@@ -1,13 +1,9 @@
-<script setup lang="ts">
+<script setup >
 import { computed, ref } from 'vue'
-import { useRouter, useRoute, RouteRecordRaw } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { routerStore } from '../../store/module/router'
 
 
-interface TabType {
-  name: string,
-  label: string,
-}
 
 const { get_routes } = routerStore()
 
@@ -18,7 +14,7 @@ const tabName = ref('Css')
 const getAllRoutes = computed(() => get_routes)
 
 
-const tabClick = (name: any) => {
+const tabClick = (name) => {
   tabName.value = name
   const findRoute = getAllRoutes.value.find(route => route.name === name)
   if (findRoute) {
@@ -29,8 +25,8 @@ const tabClick = (name: any) => {
 
 
 const findRoutes = () => {
-  const getRoute = (routes: RouteRecordRaw): RouteRecordRaw | null => {
-    let find = (routes.children || []).find(i => i.name == route.name)
+  const getRoute = (routes) => {
+    let find = (routes.children || []).find(i => i.name === route.name)
     return find ? routes : null
   }
   const getRouteParent = getAllRoutes.value.find(item => {
@@ -41,19 +37,19 @@ const findRoutes = () => {
   !getRouteParent && tabClick('Css')
 
   // 其他情况
-  getRouteParent && getRouteParent.name && (tabName.value = getRouteParent.name as string)
+  getRouteParent && getRouteParent.name && (tabName.value = getRouteParent.name)
 }
 
 // 初始化
 findRoutes()
 
 const handlerTabs = () => {
-  let tabs: TabType[] = []
+  let tabs = []
   getAllRoutes.value.forEach(route => {
     tabs.push({
       name: route.name,
       label: route.name
-    } as TabType)
+    })
   })
   return tabs
 }
@@ -79,7 +75,7 @@ const handlerTabs = () => {
   left: 0;
   right: 0;
   z-index: 10;
-  box-shadow: 0 0px 10px #eee;
+  box-shadow: 0 0 10px #eee;
   background-color: #fff;
 }
 

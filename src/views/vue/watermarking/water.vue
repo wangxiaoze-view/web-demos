@@ -1,6 +1,6 @@
-<script setup lang="ts">
-import {defineProps, onMounted, onUnmounted, ref, watchEffect} from 'vue'
-import useWater from './water'
+<script setup >
+import { onMounted, onUnmounted, ref, watchEffect} from 'vue'
+import useWater from './water.js'
 
 // props
 const props = defineProps({
@@ -25,7 +25,7 @@ const uId = ref(0)
 const bg = useWater(props)
 const {base, styleSize} = bg.value;
 
-let div
+let div;
 watchEffect(() => {
   // 搜集依赖
   uId.value;
@@ -48,13 +48,13 @@ onMounted(() => {
     for (const record of records) {
       // 监听删除
       for (const dom of record.removedNodes) {
-        if (dom == div) {
+        if (dom === div) {
           return uId.value++
         }
       }
 
       // 监听修改属性
-      if (record.target == div) {
+      if (record.target === div) {
         return uId.value++
       }
     }

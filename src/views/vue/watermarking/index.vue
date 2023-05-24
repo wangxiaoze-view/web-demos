@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import waterVue from './water.vue'
 </script>
 

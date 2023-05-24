@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup >
 import MenuVue from './menu.vue';
 import headerVue from './header.vue';
 import viewVue from './view.vue';
