@@ -25,6 +25,15 @@ const vueRoute = [
         // @ts-ignore
         component: () => import("../../views/vue/watermarking/index.vue"),
       },
+      {
+        path: "themeDark",
+        name: "ThemeDark",
+        meta: {
+          title: "系统主题",
+        },
+        // @ts-ignore
+        component: () => import("../../views/vue/themeDark/index.vue"),
+      },
     ],
   },
 ];
