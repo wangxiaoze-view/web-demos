@@ -64,12 +64,19 @@ const handlerTabs = () => {
         <el-tab-pane v-for="(item, index) in handlerTabs()" :key="index" :label="item.label" :name="item.name"></el-tab-pane>
       </el-tabs>
     </div>
+    <div class="doc-tools">
+      <a href="https://github.com/wangxiaoze-view/web-demos" target="_blank">
+        <img class="doc-tools--icon" src="../../assets/githubb.png" alt="">
+      </a>
+    </div>
+    <div></div>
   </el-header>
 </template>
 
 <style scoped>
 .header-container {
   display: flex;
+  gap: 20px;
   position: fixed;
   top: 0;
   left: 0;
@@ -77,6 +84,7 @@ const handlerTabs = () => {
   z-index: 10;
   box-shadow: 0 0 10px #eee;
   background-color: #fff;
+  padding: 0;
 }
 
 .doc-title {
@@ -92,6 +100,16 @@ const handlerTabs = () => {
 
 .doc-tabs {
   flex: 1;
+}
+
+.doc-tools {
+  display: flex;
+  align-items: center;
+}
+
+.doc-tools--icon {
+  width: 24px;
+  height: 24px;
 }
 
 :deep(.el-tabs__header) {

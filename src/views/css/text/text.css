@@ -1,0 +1,46 @@
+.view-main--container {
+  user-select: none;
+}
+
+/* 文字穿透 */
+:deep(.box-card--1 ) {
+  height: 140px;
+  background-image: url("https://qiniu.wangxiaoze.wang/hexo-blog/default_top_img.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+:deep(.box-card--1 .el-card__body) {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.box-card--1 .model-mark {
+  background: rgba(0, 0, 0, .7);
+  width: 100%;
+  height: 100%;
+  font-size: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: all .3s;
+
+}
+
+.box-card--1 .model-title {
+  text-stroke: 1px #fff;
+  -webkit-text-stroke: 1px #fff;
+  background-image: url("https://qiniu.wangxiaoze.wang/hexo-blog/default_top_img.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: font-size .4s ease-in;
+}
+
+.box-card--1:hover .model-title {
+  font-size: 70px;
+}

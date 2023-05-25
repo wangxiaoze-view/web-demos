@@ -7,15 +7,15 @@ const cssRoute = [
 
     children: [
       {
-        path: "button",
-        name: "CssButton",
+        path: "text",
+        name: "CssText",
         meta: {
-          title: "Button",
+          title: "文本",
         },
-        component: () => import("../../views/css/button/index.vue"),
+        component: () => import("../../views/css/text/index.vue"),
       },
       {
-        path: "button2",
+        path: "button",
         name: "CssButton2",
         meta: {
           title: "Button",
