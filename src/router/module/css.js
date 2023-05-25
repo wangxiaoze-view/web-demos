@@ -18,7 +18,7 @@ const cssRoute = [
         path: "button",
         name: "CssButton2",
         meta: {
-          title: "Button",
+          title: "按钮",
         },
         component: () => import("../../views/css/button/index.vue"),
       },

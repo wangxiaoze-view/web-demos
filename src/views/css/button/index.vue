@@ -3,10 +3,12 @@
 </script>
 <template>
   <div class="view-main--container">
-    <el-button type="primary" size="default">测试</el-button>
+    <button class="btn btn-1">按钮阴影</button>
   </div>
 </template>
 
 
 
-<style scoped></style>
+<style scoped>
+@import "btn.css";
+</style>
