@@ -1,33 +1,375 @@
+
 .btn {
-  padding: 5px 16px;
-  color: #000000d9;
-  border: 1px solid #d9d9d9;
-  background-color: transparent;
-  border-radius: 2px;
-  line-height: 1.4;
-  box-shadow: 0 2px #00000004;
-  cursor: pointer;
-  transition: .3s;
   position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 60px;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--el-color-white);
+  background: var(--el-color-primary);
+  border: 2px solid var(--el-color-primary-light-3);
+  outline: none;
+  border-radius: 6px;
+  letter-spacing: 2px;
+  transition: all 1s;
+  margin-bottom: 14px;
+}
+.btn:hover {
+  opacity: 0.7;
+}
+.btn:active {
+  opacity: 1;
 }
 
-.btn-1:hover{
-  color: var(--el-color-primary);
-  border-color: currentColor;
-}
-
-.btn-1::after{
+/* 阴影 */
+.btn-1::after {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
   transition: .3s;
   opacity: 0;
-  box-shadow: 0 0 2px 10px var(--el-color-primary);
+  box-shadow: 0 0 5px 10px #000;
+}
+.btn-1:active::after {
+    box-shadow: none;
+    opacity: 1;
+    transition: 0s;
 }
 
-.btn-1:active::after{
+/* 气泡 */
+.btn-2 {
+  overflow: hidden;
+}
+.btn-2::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0) scale(0, 0);
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  transform-origin: center;
+  background: rgba(0, 0, 0, .6);
+  transition: ease-in-out .5s;
+}
+.btn-2:hover::before {
+  transform: translate3d(-50%, -50%, 0) scale(10, 10);
+}
+
+
+/* 波浪 */
+.btn-3::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border: 1px solid #409EFF;
+  border-radius: 4px;
+  transform-origin: center;
+}
+.btn-3:hover::before {
+  transform: scale(1.256);
+  transition: all ease-out .5s;
+  border: 2px solid #409EFF;
+  opacity: 0;
+}
+
+
+/* 填充 */
+.btn-4::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+  transition: width ease-in-out .3s, height ease-in-out .3s;
+  height: 100%;
+}
+/* 左 */
+.btn-4--1::before {
+  inset: 0;
+  width: 0;
+  background: var(--el-color-danger);
+}
+.btn-4--1:hover::before {
+  width: 100%;
+}
+
+/* 右 */
+.btn-4--2::before {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  background: var(--el-color-danger);
+}
+.btn-4--2:hover::before {
+  width: 100%;
+}
+
+/* 上 */
+.btn-4--3::before {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background: var(--el-color-danger);
+}
+.btn-4--3:hover::before {
+  height: 100%;
+}
+
+/* 下 */
+.btn-4--4::before {
+  inset: 0;
+  height: 0;
+  width: 100%;
+  background: var(--el-color-danger);
+
+}
+.btn-4--4:hover::before {
+  height: 100%;
+}
+
+
+/* 立体 */
+.btn-5 {
+  box-shadow: 0 0 0 -2px rgba(0, 0, 0, .6),
+  2px 2px 0 -2px rgba(0, 0, 0, .6),
+  4px 4px 0 -2px rgba(0, 0, 0, .6),
+  6px 6px 0 -2px rgba(0, 0, 0, .6),
+  8px 8px 0 -2px rgba(0, 0, 0, .6);
+  transition: all .3s;
+}
+.btn-5:active {
   box-shadow: none;
-  opacity: 0.4;
-  transition: 0s;
+  overflow: hidden;
+  transform: translate(8px, 8px);
+}
+
+/* 小球 */
+@keyframes dot-ani {
+  0% {
+    transform: translateX(0) translateY(0);
+    background-color: var(--el-color-success);
+  }
+  25% {
+    transform: translateX(185px) translateY(0);
+    background-color: var(--el-color-warning);
+  }
+  50% {
+    transform: translateX(185px) translateY(60px);
+    background-color: var(--el-color-danger);
+  }
+  75% {
+    transform: translateX(0) translateY(60px);
+    background-color: var(--el-color-primary);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+    background-color: pink;
+  }
+}
+.btn-6::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -7px;
+  top: -7px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50px;
+  background-color: var(--el-color-success);
+}
+.btn-6:hover::before {
+  animation: dot-ani 2s infinite linear ;
+}
+
+
+/* 流动边框 */
+@keyframes route-ani {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.btn-7, .btn-8 {
+  overflow: hidden;
+  border: none;
+}
+.btn-7::before {
+  content: '';
+  display: block;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  position: absolute;
+  top: -75px;
+  left: -75px;
+  z-index: -2;
+  background-image: linear-gradient( var(--el-color-error), purple, var(--el-color-success), pink);
+  animation: route-ani 4s linear infinite;
+}
+.btn-7::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 5px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--el-color-primary);
+}
+
+/* 渐变背景 */
+.btn-8::before {
+  content: '';
+  display: block;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  position: absolute;
+  top: -75px;
+  left: -75px;
+  z-index: -2;
+  background-image: linear-gradient( var(--el-color-error), purple, black);
+  animation: route-ani 4s linear infinite;
+}
+.btn-8::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 5px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* 按钮线条 */
+/*上下*/
+.btn-9 {
+  padding: 0;
+  border: none;
+  overflow: hidden;
+}
+.btn-9--1::before {
+  content: '';
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 0;
+  height: 4px;
+  background: var(--el-color-success);
+  transition: .5s;
+}
+.btn-9--1::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  top: calc(100% - 4px);
+  height: 4px;
+  background: var(--el-color-warning);
+  transition: .5s;
+}
+.btn-9--1::before{
+  margin-left: auto;
+}
+.btn-9--1:hover::before, .btn-9--1:hover::after {
+  width: 100%;
+}
+
+/*左右*/
+.btn-9--2::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 0;
+  background: var(--el-color-success);
+  transition: .5s;
+}
+.btn-9--2::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 4px;
+  bottom: 0;
+  right: 0;
+  height: 0;
+  background: var(--el-color-warning);
+  transition: .5s;
+}
+
+.btn-9--2:hover::before, .btn-9--2:hover::after {
+  height: 100%;
+}
+
+/* 上下左右 */
+.btn-9--3 {
+  font-size: 16px;
+}
+.btn-9--3::before {
+  content: '';
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 0;
+  height: 4px;
+  background: var(--el-color-success);
+  transition: .5s;
+}
+.btn-9--3::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  top: calc(100% - 4px);
+  height: 4px;
+  background: var(--el-color-warning);
+  transition: .5s;
+}
+.btn-9--3::before{
+  margin-left: auto;
+}
+.btn-9--3:hover::before, .btn-9--3:hover::after {
+  width: 100%;
+}
+.btn-9--3 .btn-9--mark  {
+  position: absolute;
+  z-index: -1;
+  inset: 4px 0;
+  display: block;
+}
+
+.btn-9--3 .btn-9--mark::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 0;
+  background: purple;
+  transition: .5s;
+}
+.btn-9--3 .btn-9--mark::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 4px;
+  bottom: 0;
+  right: 0;
+  height: 0;
+  background: var(--el-color-error);
+  transition: .5s;
+}
+.btn-9--3:hover .btn-9--mark::before , .btn-9--3:hover .btn-9--mark::after {
+  height: 100%;
 }

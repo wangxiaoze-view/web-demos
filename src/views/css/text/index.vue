@@ -13,6 +13,14 @@
       </el-card>
     </el-col>
 
+
+    <el-col :span="8">
+      <el-card class="box-card--2" shadow="hover">
+        <div class="blend-text">交融效果</div>
+      </el-card>
+    </el-col>
+
+
     <el-col :span="6">
     </el-col>
 

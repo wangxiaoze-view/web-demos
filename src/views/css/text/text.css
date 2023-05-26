@@ -44,3 +44,31 @@
 .box-card--1:hover .model-title {
   font-size: 70px;
 }
+
+
+/* 交融效果 */
+.box-card--2 {
+  background: #000000;
+  height: 140px;
+  filter: contrast(30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-card--2 .blend-text {
+  color: #fff;
+  font-size: 60px;
+  animation: blend-ani 3s forwards;
+}
+
+@keyframes blend-ani {
+  from {
+    letter-spacing: -36px;
+    filter: blur(20px);
+  }
+  to {
+    letter-spacing: 10px;
+    filter: blur(0);
+  }
+}
