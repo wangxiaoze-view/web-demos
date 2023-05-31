@@ -16,6 +16,15 @@ const jsRoute = [
         // @ts-ignore
         component: () => import("../../views/js/color/index.vue"),
       },
+      {
+        path: "postMessage",
+        name: "PostMessage",
+        meta: {
+          title: "消息管道",
+        },
+        // @ts-ignore
+        component: () => import("../../views/js/postMessage/index.vue"),
+      },
     ],
   },
 ];
