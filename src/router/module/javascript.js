@@ -25,6 +25,15 @@ const jsRoute = [
         // @ts-ignore
         component: () => import("../../views/js/postMessage/index.vue"),
       },
+      {
+        path: "speech",
+        name: "Speech",
+        meta: {
+          title: "语音合成",
+        },
+        // @ts-ignore
+        component: () => import("../../views/js/speech/index.vue"),
+      },
     ],
   },
 ];
