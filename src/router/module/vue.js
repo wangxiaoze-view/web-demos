@@ -1,9 +1,7 @@
-
 const vueRoute = [
   {
     path: "/vue",
     name: "Vue",
-    // @ts-ignore
     component: () => import("../../layout/components/containerApp.vue"),
 
     children: [
@@ -13,7 +11,6 @@ const vueRoute = [
         meta: {
           title: "选项卡加载",
         },
-        // @ts-ignore
         component: () => import("../../views/vue/tabLoading/index.vue"),
       },
       {
@@ -22,7 +19,6 @@ const vueRoute = [
         meta: {
           title: "防篡改水印",
         },
-        // @ts-ignore
         component: () => import("../../views/vue/watermarking/index.vue"),
       },
       {
@@ -31,8 +27,16 @@ const vueRoute = [
         meta: {
           title: "系统主题",
         },
-        // @ts-ignore
+
         component: () => import("../../views/vue/themeDark/index.vue"),
+      },
+      {
+        path: "axios",
+        name: "Axios",
+        meta: {
+          title: "全局请求(防抖，节流)",
+        },
+        component: () => import("../../views/vue/axios/index.vue"),
       },
     ],
   },
