@@ -3,7 +3,6 @@ const jsRoute = [
   {
     path: "/javascript",
     name: "JavaScript",
-  // @ts-ignore
     component: () => import('../../layout/components/containerApp.vue'),
 
     children: [
@@ -13,7 +12,6 @@ const jsRoute = [
         meta: {
           title: "取色器",
         },
-        // @ts-ignore
         component: () => import("../../views/js/color/index.vue"),
       },
       {
@@ -22,7 +20,6 @@ const jsRoute = [
         meta: {
           title: "消息管道",
         },
-        // @ts-ignore
         component: () => import("../../views/js/postMessage/index.vue"),
       },
       {
@@ -31,8 +28,15 @@ const jsRoute = [
         meta: {
           title: "语音合成",
         },
-        // @ts-ignore
         component: () => import("../../views/js/speech/index.vue"),
+      },
+      {
+        path: "layerHandler",
+        name: "LayerHandler",
+        meta: {
+          title: "图层控制",
+        },
+        component: () => import("../../views/js/layer/index.vue"),
       },
     ],
   },
