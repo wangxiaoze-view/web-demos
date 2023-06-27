@@ -38,6 +38,14 @@ const jsRoute = [
         },
         component: () => import("../../views/js/layer/index.vue"),
       },
+      {
+        path: "customElements",
+        name: "CustomElements",
+        meta: {
+          title: "web自定义组件",
+        },
+        component: () => import("../../views/js/CustomElements/index.vue"),
+      },
     ],
   },
 ];
