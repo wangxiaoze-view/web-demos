@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 export function getFiles(dirPath = "./examples") {
-  const inputFiles = {};
+  const inputFiles = { main: "index.html" };
   fs.readdirSync(dirPath).forEach((file) => {
     const filePath = path.join(dirPath, file);
     const stat = fs.statSync(filePath);
