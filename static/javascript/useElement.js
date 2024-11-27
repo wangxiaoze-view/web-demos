@@ -14,8 +14,8 @@ const navLinks = new Map();
  */
 function createLinkFun(title, path, icon) {
   const tmp = `
-    <i class="${icon} sim-icon">
-    </i><a href="examples/${path}" target="page">${title}</a>
+    <i class="${icon} sim-icon"></i>
+    <a href="examples/${path}.html" target="page">${title}</a>
   `;
   const el = createElementForHtmlFun(tmp);
   el.querySelector('a[target="page"]').addEventListener("click", function () {
@@ -45,7 +45,7 @@ function toIframePathFun(path) {
   // 用hash判断当前的路由信息
   window.location.hash = path;
   // TODO: 存在问题
-  // page.src = getRedirctPath(path);
+  page.src = getRedirctPath(path);
 }
 
 function getRedirctPath(name = "") {
