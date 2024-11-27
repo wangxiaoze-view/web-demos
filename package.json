@@ -1,0 +1,20 @@
+{
+  "name": "web-demos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^6.0.1"
+  },
+  "dependencies": {
+    "nprogress": "^0.2.0",
+    "remixicon": "^4.5.0"
+  }
+}
