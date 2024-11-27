@@ -44,7 +44,8 @@ function toIframePathFun(path) {
   navLinks.get(path).classList.add("active");
   // 用hash判断当前的路由信息
   window.location.hash = path;
-  page.src = getRedirctPath(path);
+  // TODO: 存在问题
+  // page.src = getRedirctPath(path);
 }
 
 function getRedirctPath(name = "") {
