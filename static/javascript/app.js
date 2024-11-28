@@ -10,14 +10,17 @@ function init() {
   for (const [title, { icon, path }] of Object.entries(navs)) {
     const el = createLinkFun(title, path, icon);
     nav.appendChild(el);
-    // navLinks 菜单ma跑合集
     navLinks.set(path, el);
   }
 
   const has = window.location.hash;
   if (has !== "") {
     const path = has.substring(1);
-    if (navLinks.has(path)) toIframePathFun(path);
+    if (navLinks.has(path)) {
+      toIframePathFun(path);
+    } else {
+      toIframePathFun("button");
+    }
   } else {
     toIframePathFun("button");
   }

@@ -26,12 +26,14 @@ export default function useLoading() {
       clearInterval(timer);
       setTimeout(() => {
         resolve();
-        loadingEl.remove();
+        // loadingEl.remove();
+        loadingEl.style.display = "none";
       }, 1000);
     });
   };
 
   return {
+    loadingEl,
     closeProgress,
   };
 }

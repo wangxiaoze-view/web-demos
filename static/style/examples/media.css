@@ -1,0 +1,41 @@
+/* 超小设备 (手机, 600px 以下屏幕设备) */
+@media only screen and (max-width: 600px) {
+  .buttons-warpper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* 小设备 (平板电脑和大型手机，600 像素及以上) */
+@media only screen and (min-width: 600px) {
+  .buttons-warpper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 中型设备（平板电脑，768 像素及以上） */
+@media only screen and (min-width: 768px) {
+  .buttons-warpper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 大型设备（笔记本电脑/台式机，992 像素及以上） */
+@media only screen and (min-width: 992px) {
+  .buttons-warpper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* 超大型设备（大型笔记本电脑和台式机，1200 像素及以上） */
+@media only screen and (min-width: 1200px) {
+  .buttons-warpper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* 超大型设备（大型笔记本电脑和台式机，1200 像素及以上） */
+@media only screen and (min-width: 1280px) {
+  .buttons-warpper {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

@@ -4,7 +4,6 @@ export const nav = document.querySelector("#nav");
 const page = document.querySelector("#page");
 
 const navLinks = new Map();
-// const redirectMap = new Map();
 
 /**
  * @description  动态创建菜单元素
@@ -14,8 +13,10 @@ const navLinks = new Map();
  */
 function createLinkFun(title, path, icon) {
   const tmp = `
-    <i class="${icon} sim-icon"></i>
-    <a href="examples/${path}.html" target="page">${title}</a>
+    <a href="examples/${path}.html" target="page">
+      <i class="${icon} sim-icon"></i>
+      ${title}
+    </a>
   `;
   const el = createElementForHtmlFun(tmp);
   el.querySelector('a[target="page"]').addEventListener("click", function () {
@@ -37,14 +38,12 @@ function createElementForHtmlFun(htmlTemplateStr = "") {
 }
 
 function toIframePathFun(path) {
-  // 所有菜单清楚选中，当前菜单选中
   for (const [key, el] of navLinks.entries()) {
     el.classList.remove("active");
   }
   navLinks.get(path).classList.add("active");
   // 用hash判断当前的路由信息
   window.location.hash = path;
-  // TODO: 存在问题
   page.src = getRedirctPath(path);
 }
 
