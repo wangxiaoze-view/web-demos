@@ -1,9 +1,3 @@
-// 如果将此demo放在单文件， 这里的vw可以为100vw，  单文件html中 把下面注释的css代码放开即可
-
-// 这里需要时 每一行n个 减去1，不然最后一个显示空白
-// $cols: 9;
-// $size: 100vw / $cols;
-
 body {
   margin: 0;
 }
@@ -12,30 +6,12 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
-  // align-items: center;
-  .item {
-    flex-shrink: 0;
-    background-color: #f0f0f0;
-    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 0% 75%, 0% 25%);
-    cursor: pointer;
-    transition: all 0.4s ease;
-  }
 
   .row-container {
     display: flex;
     align-items: center;
-    // &:nth-child(even) {
-    // 	transform: translateX(-$size / 2);
-    // }
-    // &:nth-child(n + 2) {
-    // 	margin-top: -$size / 5;
-    // }
     .shape {
       flex-shrink: 0;
-      // width: $size;
-      // height: $size;
       background-color: #f0f0f0;
       clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 0% 75%, 0% 25%);
       cursor: pointer;

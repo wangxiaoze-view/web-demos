@@ -2,6 +2,8 @@
 export const nav = document.querySelector("#nav");
 // iframe-page el
 const page = document.querySelector("#page");
+// code-viewer
+const codeViewer = document.querySelector("#code-view");
 
 const navLinks = new Map();
 
@@ -45,11 +47,18 @@ function toIframePathFun(path) {
   // 用hash判断当前的路由信息
   window.location.hash = path;
   page.src = getRedirctPath(path);
+  codeViewer.href = getGithubPath(path);
+  console.log(path, 123);
 }
 
 function getRedirctPath(name = "") {
   if (!name) return "";
   return `examples/${name}.html`;
+}
+
+function getGithubPath(name = "") {
+  if (!name) return "";
+  return `https://github.com/wangxiaoze-view/web-demos/tree/main/examples/${name}.html`;
 }
 
 export default function useElement() {

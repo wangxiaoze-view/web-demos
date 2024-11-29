@@ -100,3 +100,19 @@ a {
   overflow: auto;
   padding-left: 220px;
 }
+
+#code-view {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  background-color: #222;
+  color: #fff;
+  .sim-icon {
+    font-size: 24px;
+  }
+}
