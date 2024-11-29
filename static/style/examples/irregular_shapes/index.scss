@@ -52,14 +52,43 @@
 
 .shape_2 {
   clip-path: polygon(50% 0, 100% 100%, 0 100%, 50% 0);
-  background: url(https://file.wangzevw.com/images/default_top_img_5.jpeg);
+  background-image: url(https://picsum.photos/500/300?random=2),
+    linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
   background-size: cover;
   background-position: bottom;
 }
 
 .shape_3 {
   clip-path: polygon(25% 0, 75% 0, 100% 100%, 0 100%, 25% 0);
-  background: url(https://file.wangzevw.com/images/default_top_img_5.jpeg);
+  background-image: url(https://picsum.photos/500/300?random=3),
+    linear-gradient(
+      to right,
+      #ff8177 0%,
+      #ff867a 0%,
+      #ff8c7f 21%,
+      #f99185 52%,
+      #cf556c 78%,
+      #b12a5b 100%
+    );
   background-size: cover;
   background-position: top;
+}
+
+.shape_4 {
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  background-image: url(https://picsum.photos/500/300?random=4),
+    linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+  background-size: cover;
+  background-position: center;
 }
