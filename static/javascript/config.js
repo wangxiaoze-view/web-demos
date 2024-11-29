@@ -11,4 +11,8 @@ export const navs = {
     icon: "ri-pencil-ruler-2-line",
     path: "irregular_shapes",
   },
+  // 图片调色盘: {
+  //   icon: "ri-palette-line",
+  //   path: "image_palette",
+  // },
 };
