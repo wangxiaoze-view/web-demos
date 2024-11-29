@@ -1,0 +1,43 @@
+.zoom_zither {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  .item {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    flex: 1;
+    margin: 10px;
+    position: relative;
+    transition: all 0.5s ease-in;
+    height: 500px;
+    border-radius: 50px;
+    &:active {
+      flex: 13;
+    }
+  }
+
+  @for $index from 1 through 13 {
+    .item:nth-child(#{$index}) {
+      background-image: url(https://picsum.photos/1400/500?random=#{$index}),
+        linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}
