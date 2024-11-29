@@ -48,7 +48,6 @@ function toIframePathFun(path) {
   window.location.hash = path;
   page.src = getRedirctPath(path);
   codeViewer.href = getGithubPath(path);
-  console.log(path, 123);
 }
 
 function getRedirctPath(name = "") {
