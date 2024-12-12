@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import { getFiles } from "./build/getInputFiles.mjs";
 
-console.log(import.meta.env);
 export default defineConfig({
   server: {
     port: 5555,
