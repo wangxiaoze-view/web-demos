@@ -5,6 +5,7 @@ import "./libs.js";
 const { closeProgress } = useLoading();
 const { navLinks, createLinkFun, toIframePathFun } = useElement();
 
+console.log(__base);
 // 初始化
 function init() {
   for (const [title, { icon, path }] of Object.entries(navs)) {
