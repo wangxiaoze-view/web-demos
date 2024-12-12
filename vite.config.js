@@ -5,7 +5,7 @@ export default defineConfig({
   server: {
     port: 5555,
   },
-  base: "/web-demos",
+  base: "/",
   build: {
     rollupOptions: {
       input: getFiles(),
