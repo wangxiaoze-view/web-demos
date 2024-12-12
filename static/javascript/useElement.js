@@ -52,7 +52,7 @@ function toIframePathFun(path) {
 
 function getRedirctPath(name = "") {
   if (!name) return "";
-  return `examples/${name}.html`;
+  return `${window.__base}examples/${name}.html`;
 }
 
 function getGithubPath(name = "") {

@@ -1,11 +1,15 @@
 import { defineConfig } from "vite";
 import { getFiles } from "./build/getInputFiles.mjs";
 
+console.log(import.meta.env);
 export default defineConfig({
   server: {
     port: 5555,
   },
   base: "/web-demos/",
+  define: {
+    __base: "/web-demos/",
+  },
   build: {
     rollupOptions: {
       input: getFiles(),
