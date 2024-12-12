@@ -15,7 +15,7 @@ const navLinks = new Map();
  */
 function createLinkFun(title, path, icon) {
   const tmp = `
-    <a href="examples/${path}.html" target="page">
+    <a href="${window.__base}examples/${path}.html" target="page">
       <i class="${icon} sim-icon"></i>
       ${title}
     </a>
