@@ -12,4 +12,8 @@ const vercelJson = {
   },
 };
 
-writeFileSync("dist/vercel.json", JSON.stringify(vercelJson, null, 2));
+try {
+  writeFileSync("dist/vercel.json", JSON.stringify(vercelJson, null, 2));
+} finally {
+  process.exit(0);
+}
