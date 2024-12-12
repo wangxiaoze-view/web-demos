@@ -4,7 +4,7 @@ const vercelJson = {
   rewrites: [
     {
       source: "/web-demos/:match*",
-      destination: "/:match*",
+      destination: "/web-demos/:match*",
     },
   ],
   github: {
