@@ -14,6 +14,7 @@ const navLinks = new Map();
  * @returns {HTMLElement} -
  */
 function createLinkFun(title, path, icon) {
+  console.log(window.__base, "----");
   const tmp = `
     <a href="${window.__base}examples/${path}.html" target="page">
       <i class="${icon} sim-icon"></i>
