@@ -5,8 +5,6 @@ import "./libs.js";
 const { closeProgress } = useLoading();
 const { navLinks, createLinkFun, toIframePathFun } = useElement();
 
-console.log(__base);
-
 if (__base) window.__base = __base;
 // 初始化
 function init() {
