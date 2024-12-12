@@ -7,8 +7,6 @@ const codeViewer = document.querySelector("#code-view");
 
 const navLinks = new Map();
 
-const pre = window.__base || import.meta.env.BASE_URL || "";
-
 /**
  * @description  动态创建菜单元素
  * @param {string} title -
@@ -17,7 +15,7 @@ const pre = window.__base || import.meta.env.BASE_URL || "";
  */
 function createLinkFun(title, path, icon) {
   const tmp = `
-    <a href="${pre}examples/${path}.html" target="page">
+    <a href="${window.__base}examples/${path}.html" target="page">
       <i class="${icon} sim-icon"></i>
       ${title}
     </a>
@@ -54,7 +52,7 @@ function toIframePathFun(path) {
 
 function getRedirctPath(name = "") {
   if (!name) return "";
-  return `${pre}examples/${name}.html`;
+  return `${window.__base}examples/${name}.html`;
 }
 
 function getGithubPath(name = "") {

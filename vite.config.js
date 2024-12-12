@@ -1,13 +1,14 @@
 import { defineConfig } from "vite";
 import { getFiles } from "./build/getInputFiles.mjs";
 
+const base = "/web-demos/";
 export default defineConfig({
   server: {
     port: 5555,
   },
-  base: "/web-demos/",
+  base,
   define: {
-    __base: JSON.stringify("/web-demos/"),
+    __base: JSON.stringify(base),
   },
   build: {
     rollupOptions: {
