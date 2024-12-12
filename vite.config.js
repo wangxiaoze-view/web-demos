@@ -8,7 +8,7 @@ export default defineConfig({
   },
   base: "/web-demos/",
   define: {
-    __base: "/web-demos/",
+    __base: JSON.stringify("/web-demos/"),
   },
   build: {
     rollupOptions: {
