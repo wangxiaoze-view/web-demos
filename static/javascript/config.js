@@ -51,4 +51,12 @@ export const navs = {
     icon: "ri-golf-ball-line",
     path: "bouncing_ball",
   },
+  "3D魔方": {
+    icon: "ri-box-3-line",
+    path: "cube_three_3d",
+  },
+  "3D狼模型": {
+    icon: "ri-box-3-line",
+    path: "wolf_threee_3d",
+  },
 };
