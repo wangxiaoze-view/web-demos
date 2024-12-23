@@ -51,6 +51,18 @@ export const navs = {
     icon: "ri-golf-ball-line",
     path: "bouncing_ball",
   },
+  loading_1: {
+    icon: "ri-loader-2-line",
+    path: "css_loading",
+  },
+  loading_2: {
+    icon: "ri-loader-2-line",
+    path: "css_loading_2",
+  },
+  loading_3: {
+    icon: "ri-loader-2-line",
+    path: "css_loading_3",
+  },
   "3D魔方": {
     icon: "ri-box-3-line",
     path: "cube_three_3d",
