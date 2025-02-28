@@ -65,26 +65,37 @@ a {
   transition: 0s 0s height;
   background-color: #222;
   padding: 14px;
+  .nav-parent {
+    border-bottom: 1px solid #333;
+  }
   .nav-item {
     cursor: pointer;
-    height: 50px;
+    height: auto;
     line-height: 50px;
-    text-align: center;
-    border-bottom: 1px solid #333;
     transition: all 0.3s ease-in-out;
     &.active {
       background-color: #333;
       border-radius: 10px;
     }
 
-    .sim-icon,
-    a {
+    &-title {
       color: #fff;
-      margin-right: 4px;
+      line-height: 50px;
     }
-    a {
-      display: block;
+    &-child {
+      margin: 0;
+      padding-left: 20px;
+      list-style: none;
     }
+  }
+
+  .sim-icon,
+  a {
+    color: #fff;
+    margin-right: 4px;
+  }
+  a {
+    display: block;
   }
 }
 

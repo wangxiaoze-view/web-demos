@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3D Cube Loading Effect</title>
+    <link rel="stylesheet" href="/examples/css_loading2/css/index.css" />
+  </head>
+  <body>
+    <div class="scene">
+      <div class="glow"></div>
+      <div class="sparkles" id="sparkles"></div>
+      <svg class="progress-ring" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" />
+      </svg>
+      <div class="cube-wrapper">
+        <div class="cube">
+          <div class="cube-face front"></div>
+          <div class="cube-face back"></div>
+          <div class="cube-face right"></div>
+          <div class="cube-face left"></div>
+          <div class="cube-face top"></div>
+          <div class="cube-face bottom"></div>
+        </div>
+      </div>
+      <div class="loading-text">Loading...</div>
+    </div>
+
+    <script type="module" src="/examples/css_loading2/js/index.js"></script>
+  </body>
+</html>
