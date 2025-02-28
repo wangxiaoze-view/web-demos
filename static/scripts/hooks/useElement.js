@@ -29,9 +29,6 @@ function onCreateMenuFun(value) {
     </div>
   `;
     const el = createElementForHtmlFun(tmp);
-    // el.querySelector('a[target="page"]').addEventListener("click", function () {
-    //   toIframePathFun(path);
-    // });
     return el;
   }
   const childrenList = children.map((item) => onCreateMenuFun(item).innerHTML);
@@ -78,7 +75,7 @@ function getRedirctPath(name = "") {
 
 function getGithubPath(name = "") {
   if (!name) return "";
-  return `https://github.com/wangxiaoze-view/web-demos/tree/main/examples/${name}.html`;
+  return `https://github.com/wangxiaoze-view/web-demos/tree/main/examples/${name}/index.html`;
 }
 
 export function useElement() {
