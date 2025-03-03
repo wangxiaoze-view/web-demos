@@ -1,3 +1,5 @@
-import "remixicon/fonts/remixicon.css";
+import "./icon.js";
 import nprogress from "nprogress";
-export { nprogress };
+import ColorThief from "colorthief";
+
+export { nprogress, ColorThief };

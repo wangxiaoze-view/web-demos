@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="/examples/background sync_tasks/css/index.css"
+    />
+  </head>
+  <body>
+    <div class="sync-container">
+      <h5>
+        场景：在特定的场合下，需要提交一些数据给到后端进行数据保存~<br />
+        如何操作：选择TODO, 点击任务提交, 下方会有任务执行的进度条,
+        如何在离线的场景下会等待网络在线才会提交! <br />
+        当前网络状态：<span class="wifi-status"></span>
+      </h5>
+      <ul>
+        <li>
+          <label>
+            <div class="checkbox">
+              <input type="checkbox" value="吃饭" name="task" />
+              <i class="ri-checkbox-blank-line sim-icon"></i>
+            </div>
+            吃饭
+          </label>
+        </li>
+        <li>
+          <label>
+            <div class="checkbox">
+              <input type="checkbox" value="睡觉" name="task" />
+              <i class="ri-checkbox-blank-line sim-icon"></i>
+            </div>
+            睡觉
+          </label>
+        </li>
+        <li>
+          <label>
+            <div class="checkbox">
+              <input type="checkbox" value="打豆豆" name="task" />
+              <i class="ri-checkbox-blank-line sim-icon"></i>
+            </div>
+            打豆豆
+          </label>
+        </li>
+        <li class="result">
+          <span></span>
+          <div>
+            <button class="stop disabled">清除任务</button>
+            <button class="start disabled">同步任务</button>
+            <button class="normal disabled">普通任务</button>
+          </div>
+        </li>
+        <li class="status">
+          <div class="status-left">
+            <div class="status-progress"></div>
+          </div>
+          <span class="status-result"></span>
+        </li>
+      </ul>
+    </div>
+    <script
+      type="module"
+      src="/examples/background sync_tasks/js/index.js"
+    ></script>
+  </body>
+</html>

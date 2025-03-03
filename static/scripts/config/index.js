@@ -59,9 +59,19 @@ const css_links = [
     icon: "ri-loader-2-line",
     path: "css_loading3",
   },
+  {
+    title: "Css 画板",
+    icon: "ri-paint-line",
+    path: "css_painting",
+  },
 ];
 
 const fun_links = [
+  {
+    title: "系统取色器",
+    icon: "ri-dropper-line",
+    path: "color_picker",
+  },
   {
     title: "蜂窝图片",
     icon: "ri-image-ai-line",
@@ -73,9 +83,24 @@ const fun_links = [
     path: "image_palette",
   },
   {
-    title: "系统取色器",
-    icon: "ri-dropper-line",
-    path: "color_picker",
+    title: "后台同步任务",
+    icon: "ri-reset-left-line",
+    path: "background sync_tasks",
+  },
+  {
+    title: "后台任务协作调度",
+    icon: "ri-list-check-3",
+    path: "background_tasks",
+  },
+  {
+    title: "后台任务协作调度2",
+    icon: "ri-list-check-3",
+    path: "background_tasks2",
+  },
+  {
+    title: "条码检测",
+    icon: "ri-barcode-line",
+    path: "barcode_detection",
   },
 ];
 

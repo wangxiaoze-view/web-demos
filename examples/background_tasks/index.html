@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/examples/background_tasks/css/index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h5>浏览器空余时间执行任务调度</h5>
+      <div class="container-progress">
+        <span>任务调度</span>
+        <progress value="10" max="100"></progress>
+        <div><span id="current">0</span> / <span id="total">0</span></div>
+        <button>开始</button>
+      </div>
+      <div class="container-task">
+        <div>任务记录：</div>
+        <ul class="container-task-content">
+          <li class="empty">还没有数据哦!~</li>
+        </ul>
+      </div>
+    </div>
+    <script type="module" src="/examples/background_tasks/js/index.js"></script>
+  </body>
+</html>

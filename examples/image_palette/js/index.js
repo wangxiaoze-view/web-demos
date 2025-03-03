@@ -1,4 +1,4 @@
-import ColorThief from "colorthief";
+import { ColorThief } from "/static/scripts/libs/index.js";
 const colorThief = new ColorThief();
 
 // 设置最大颜色数量

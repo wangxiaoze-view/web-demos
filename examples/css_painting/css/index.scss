@@ -1,0 +1,45 @@
+$space: 14px;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  @include flex-center;
+  .pain-container {
+    width: 40%;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: $space;
+
+      li {
+        height: 40px;
+        padding: 0 $space;
+        align-content: center;
+        margin-bottom: $space;
+        background-image: paint(paint);
+        position: relative;
+        &::after {
+          content: attr(data-num);
+          position: absolute;
+          top: 50%;
+          right: calc(var(--right) + 4px);
+          transform: translateY(-50%);
+          color: #fff;
+          display: block;
+          font-size: 12px;
+        }
+        &.-not {
+          &::after {
+            color: var(--color);
+            left: 20%;
+          }
+        }
+      }
+    }
+  }
+}

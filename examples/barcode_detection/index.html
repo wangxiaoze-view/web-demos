@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/examples/barcode_detection/css/index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-title">条形码检测</div>
+      <div class="container-header">
+        <span>以下图中的图形码进行检测</span>
+        <button>开始检测</button>
+      </div>
+      <p class="container-support">
+        支持的条码格式: <code id="support"></code>
+      </p>
+
+      <div class="container-img">
+        <img class="img" src="/static/images/demo.png" alt="" />
+        <div class="container-img-content"></div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="/examples/barcode_detection/js/index.js"
+    ></script>
+  </body>
+</html>
