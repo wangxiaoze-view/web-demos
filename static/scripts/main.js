@@ -1,11 +1,9 @@
 import { navs_config } from "./config/index";
 import { useLoading, useElement, nav as navEl } from "./hooks/index.js";
 import "./libs/index.js";
-
+import "./__define.js";
 const { closeProgress } = useLoading();
 const { navLinks, onCreateMenuFun, toIframePathFun } = useElement();
-
-if (__base) window.__base = __base;
 
 bootstrap();
 

@@ -80,6 +80,7 @@ function timeTask() {
     }, 500);
   }
 }
+
 // main
 function bootstrap() {
   return new Promise((resolve) => {
@@ -87,7 +88,9 @@ function bootstrap() {
     const serviceWorker = navigator.serviceWorker;
     serviceWorker
       .register(
-        "https://github.com/wangxiaoze-view/web-demos/blob/main/examples/background_sync_tasks/js/worker.js"
+        import.meta.env.PROD
+          ? "/web-demos/js/embed/background_sync_tasks_worker.js"
+          : "/web-demos/static/scripts/embed/background_sync_tasks_worker.js"
       )
       .then((_registration) => {
         registration = _registration;

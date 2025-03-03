@@ -26,7 +26,11 @@ function randomColor() {
 }
 
 if ("paintWorklet" in CSS) {
-  CSS.paintWorklet.addModule(`/web-demos/examples/css_painting/js/paint.js`);
+  CSS.paintWorklet.addModule(
+    import.meta.env.PROD
+      ? `/web-demos/js/embed/css_painting_paint.js`
+      : `/web-demos/static/scripts/embed/css_painting_paint.js`
+  );
 } else {
   ulEl.innerHTML = `<li>该浏览器暂不支持~</li>`;
 }
