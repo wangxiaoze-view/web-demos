@@ -86,7 +86,9 @@ function bootstrap() {
     if (!"serviceWorker" in navigator) return resolve(null);
     const serviceWorker = navigator.serviceWorker;
     serviceWorker
-      .register("/web-demos/examples/background sync_tasks/js/worker.js")
+      .register(
+        "https://github.com/wangxiaoze-view/web-demos/blob/main/examples/background_sync_tasks/js/worker.js"
+      )
       .then((_registration) => {
         registration = _registration;
       })

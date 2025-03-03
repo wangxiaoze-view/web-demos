@@ -85,7 +85,7 @@ const fun_links = [
   {
     title: "后台同步任务",
     icon: "ri-reset-left-line",
-    path: "background sync_tasks",
+    path: "background_sync_tasks",
   },
   {
     title: "后台任务协作调度",
