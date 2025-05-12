@@ -15,6 +15,8 @@ export default defineConfig(({ mode }) => {
       __is_production: `${mode === "production"}`,
     },
     build: {
+      manifest: true,
+      cssMinify: true,
       rollupOptions: {
         input: onGetBuildInput(),
         output: {

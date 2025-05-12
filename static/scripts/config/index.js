@@ -64,6 +64,21 @@ const css_links = [
     icon: "ri-paint-line",
     path: "css_painting",
   },
+  {
+    title: "图片分割器1",
+    icon: "ri-split-cells-horizontal",
+    path: "image_splitter1",
+  },
+  {
+    title: "图片分割器2",
+    icon: "ri-split-cells-horizontal",
+    path: "image_splitter2",
+  },
+  {
+    title: "图片分割器3",
+    icon: "ri-split-cells-horizontal",
+    path: "image_splitter3",
+  },
 ];
 
 const fun_links = [

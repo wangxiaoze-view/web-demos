@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+}
+
+.image_box {
+  overflow: hidden;
+  img {
+    object-fit: cover;
+    width: 100%;
+    user-select: none;
+  }
+  .mark {
+    position: absolute;
+    inset: 0;
+    background-color: cadetblue;
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+    z-index: 1;
+  }
+
+  .line {
+    content: "";
+    position: absolute;
+    right: 50%;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    z-index: 10;
+    background-color: #ddd;
+    cursor: col-resize;
+  }
+
+  .default {
+    filter: blur(5px);
+    transition: filter 0.1s;
+  }
+}

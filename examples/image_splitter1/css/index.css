@@ -1,0 +1,1 @@
+body{margin:0}.image_box{width:100%;overflow:hidden;position:relative}.image_box img{-o-object-fit:cover;object-fit:cover;width:100%}.image_box .mark{position:absolute;inset:0;background-color:#5f9ea0;-webkit-clip-path:polygon(0 0, 50% 0, 0 100%);clip-path:polygon(0 0, 50% 0, 0 100%)}
