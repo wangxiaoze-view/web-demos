@@ -89,8 +89,8 @@ function bootstrap() {
     serviceWorker
       .register(
         import.meta.env.PROD
-          ? "/web-demos/js/embed/background_sync_tasks_worker.js"
-          : "/web-demos/static/scripts/embed/background_sync_tasks_worker.js"
+          ? "/js/embed/background_sync_tasks_worker.js"
+          : "/static/scripts/embed/background_sync_tasks_worker.js"
       )
       .then((_registration) => {
         registration = _registration;

@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import { onGetBuildInput, embedInput } from "./build/getInputFiles.mjs";
 
-const base = "/web-demos/";
+const base = "/";
 export default defineConfig(({ mode }) => {
   return {
     server: {
