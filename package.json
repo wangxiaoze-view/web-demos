@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:sh": "vite build:sh",
+    "build:sh": "sh build:sh",
     "preview": "vite preview"
   },
   "keywords": [],
