@@ -84,6 +84,11 @@ const css_links = [
     icon: "ri-text",
     path: "text_break",
   },
+  {
+    title: "文本选择",
+    icon: "ri-text",
+    path: "text_select",
+  },
 ];
 
 const fun_links = [
