@@ -79,6 +79,11 @@ const css_links = [
     icon: "ri-split-cells-horizontal",
     path: "image_splitter3",
   },
+  {
+    title: "文本断点",
+    icon: "ri-text",
+    path: "text_break",
+  },
 ];
 
 const fun_links = [
