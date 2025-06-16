@@ -84,13 +84,13 @@ function timeTask() {
 // main
 function bootstrap() {
   return new Promise((resolve) => {
-    if (!"serviceWorker" in navigator) return resolve(null);
+    if (!("serviceWorker" in navigator)) return resolve(null);
     const serviceWorker = navigator.serviceWorker;
     serviceWorker
       .register(
         import.meta.env.PROD
-          ? "/js/embed/background_sync_tasks_worker.js"
-          : "/static/scripts/embed/background_sync_tasks_worker.js"
+          ? "/demos/js/embed/background_sync_tasks_worker.js"
+          : "/demos/static/scripts/embed/background_sync_tasks_worker.js"
       )
       .then((_registration) => {
         registration = _registration;

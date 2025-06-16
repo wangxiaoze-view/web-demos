@@ -10,6 +10,11 @@ const css_links = [
     path: "text_background_cropping",
   },
   {
+    title: "文字背景裁剪动画",
+    icon: "ri-text",
+    path: "text_background_cropping2",
+  },
+  {
     title: "文字交融",
     icon: "ri-text",
     path: "text_fusion",

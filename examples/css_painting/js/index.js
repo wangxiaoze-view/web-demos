@@ -28,8 +28,8 @@ function randomColor() {
 if ("paintWorklet" in CSS) {
   CSS.paintWorklet.addModule(
     import.meta.env.PROD
-      ? `/js/embed/css_painting_paint.js`
-      : `/static/scripts/embed/css_painting_paint.js`
+      ? `/demos/js/embed/css_painting_paint.js`
+      : `/demos/static/scripts/embed/css_painting_paint.js`
   );
 } else {
   ulEl.innerHTML = `<li>该浏览器暂不支持~</li>`;
